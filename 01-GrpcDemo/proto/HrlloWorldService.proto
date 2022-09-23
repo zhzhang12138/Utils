@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+// 请求参数对象
+message HelloWorldRequest {
+  string name = 1;
+}
+
+// 返回参数对象
+message HelloWorldResponse {
+  string message = 1;
+}
+
+// 对外暴露的服务
+service HelloWorld {
+  // 对外暴露的函数名，参数和返回值
+  rpc SendSms (HelloWorldRequest) returns (HelloWorldResponse) {};
+}
